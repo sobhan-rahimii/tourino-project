@@ -31,6 +31,44 @@ function WhyTourino() {
       <div className="w-full lg:mt-[79px]  border border-solid border-[#00000033]">
         .
       </div>
+      <div className="max-w-[1270px] mx-auto px-10">
+        <div className="flex justify-between gap-3 ">
+          <div className="flex items-center gap-1">
+            <Image src="/icons/Group 16.svg" width={121} height={109} alt="groups" />
+            <div className="flex flex-col">
+              <p>بصرفه ترین قیمت</p>
+              <p>بصرفه ترین و ارزان ترین قیمت تور را از ما بخواهید.</p>
+            </div>
+
+          </div>
+          <div className="flex justify-between gap-3">
+          <div className="flex items-center gap-1 mr-[66px]">
+            <Image src="/icons/Message 37.svg" width={121} height={109} alt="groups" />
+            <div className="flex flex-col">
+              <p>پشتیبانی</p>
+              <p>پشتیبانی و همراهی 24 ساعته در تمامی مراحل سفر شما.</p>
+            </div>
+
+          </div>
+        </div>
+        <div className="flex justify-between ">
+          <div className="flex items-center gap-1 mr-[66px]">
+            <Image src="/icons/Group 18.svg" width={121} height={109} alt="groups" />
+            <div className="flex flex-col">
+              <p>رضایت کاربران</p>
+              <p>رضایت بیش از 10هزار کاربر از تور های ما. </p>
+            </div>
+
+          </div>
+        </div>
+        </div>
+
+        
+      </div>
+
+      <div className="w-[1200px] border border-solid border-[#00000033] mt-[32px] mx-auto"></div>
+
+
     </>
   );
 }

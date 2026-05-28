@@ -7,11 +7,11 @@ import React from "react";
 function DetailstourView({ data, id }) {
   console.log(data);
   return (
-    <div className="bg-slate-300">
+    <div className="bg-slate-300 py-10">
 
     
-    <div className="max-w-[1270px]  mx-auto px-7  ">
-      <div className=" max-w-[1270px] bg-white mt-[36px] border border-solid border-#00000033 ">
+    <div className="max-w-[1270px]  mx-auto px-7   ">
+      <div className=" max-w-[1270px] bg-white mt-[36px] border border-solid border-#00000033 mb-[99px] ">
         <div className="  flex px-5 py-5">
           <Image src={data?.image} width={397} height={265} alt="photo" />
           <div className=" w-full mr-[24px]">

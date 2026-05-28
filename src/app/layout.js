@@ -4,7 +4,7 @@ import Header from "@/components/templates/Header";
 import TanstackQueryProvider from "@/components/partials/provider/TanstackQueryProvider";
 import { Toaster } from "react-hot-toast";
   
-
+import Footer from "@/components/templates/footer";
 
 
 
@@ -19,7 +19,16 @@ export default function RootLayout({ children }) {
       <body >
         <TanstackQueryProvider>
           <Header />
+          <div className="h-full">
           {children}
+
+          </div>
+          <footer className="">
+          <Footer/>
+
+          </footer>
+          
+          
         </TanstackQueryProvider>
         <Toaster/>
       </body>
