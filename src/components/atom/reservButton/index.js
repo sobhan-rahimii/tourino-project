@@ -22,7 +22,8 @@ function ReservButton({id}) {
   }
   return (
     <div>
-        <button onClick={cartHandler} className='w-[283px] h-[56px] bg-[#28A745] rounded-[10px] flex items-center  justify-center mt-[29px] px-[12px]'>رزرو و خرید</button>
+        <button onClick={cartHandler} className='hidden lg:block lg:w-[283px] lg:h-[56px] bg-[#28A745] lg:rounded-[10px] lg:flex lg:items-center  lg:justify-center lg:mt-[29px] lg:px-[12px]'>رزرو و خرید</button>
+        <button onClick={cartHandler} className='lg:hidden text-white w-[154px] h-[42px] bg-[#28A745] rounded-[10px]  '>رزرو و خرید</button>
     </div>
   )
 }

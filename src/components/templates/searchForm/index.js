@@ -1,7 +1,7 @@
 "use client";
 
 import { flattenObject } from "@/core/utils/helpers";
-import React, { useEffect,  useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRef } from "react";
 
 import { useForm, Controller, get } from "react-hook-form";
@@ -51,56 +51,49 @@ function SearchForm() {
 
   const { data, isPending, refetch } = useGetTours(query);
   const { getQuery } = useQuery();
- console.log("query state:", query);
-console.log("isPending:", isPending);
-console.log("data:", data);
-console.log("query object:", query);
-console.log("query.date:", query?.date);
-console.log("query.startDate:", query?.startDate);
-console.log("query.from:", query?.from);
-console.log("query.to:", query?.to);
-  const didInit = useRef(false);
 
   useEffect(() => {
-    if (didInit.current) return;
     const originId = getQuery("originId");
     const destinationId = getQuery("destinationId");
     if (originId && destinationId) {
-      reset({ originId, destinationId })
-      setQuery({originId,destinationId})
-
-      didInit.current = true;
+      reset({ originId, destinationId });
+      setQuery({ originId, destinationId });
     }
   }, [getQuery, reset]);
 
   const submitHandler = (form) => {
     const query = QueryString.stringify(flattenObject(form));
-    
+
     console.log(query);
     router.push(`/?${query}`);
-    
-console.log("form:", form);
+
+    console.log("form:", form);
   };
 
   return (
-    <form onSubmit={handleSubmit(submitHandler)}>
-      <div className="w-[874px] h-[71px] mx-auto flex justify-center mt-[30px] border border-solid border-e-red-600">
-        <div className=" w-full flex items-center gap-2 ">
+    <form className="w-full" onSubmit={handleSubmit(submitHandler)}>
+      <div className=" w-full border-0 px-[31px]  lg:px-0 lg:w-[874px] lg:h-[71px] lg:mx-auto lg:flex lg:justify-center lg:mt-[30px] lg:border lg:border-solid lg:border-e-red-600">
+        <div className=" w-full flex flex-wrap px-[31px] gap-x-10    lg:w-full lg:flex-nowrap lg:flex lg:flex-row lg:items-center lg:px-0 lg:gap-2 ">
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <button type="button" className="  flex gap-2 items-center  mr-[20]  ">
+            <DropdownMenuTrigger
+              className="  w-[160px] border border-solid border-[#00000026] rounded-[12px]  lg:border-0 lg:w-[160px] lg:px-0 "
+              asChild
+            >
+              <button
+                type="button"
+                className=" flex items-center justify-center gap-2 px-auto    lg:flex  lg:gap-2 lg:justify-start  lg:mr-[20px]  "
+              >
                 <Image
                   src="/icons/location.svg"
                   width={20}
                   height={20}
                   alt="location"
+                  className=" "
                 />
-                <span>{originLabel}</span>
-                <div className="flex ">
-
-                <DropdownMenuSeparator className="w-[56px] mr-[127px] border border-solid border-[#00000033] rotate-90   "></DropdownMenuSeparator>
+                <span className="text-[#00000080]">{originLabel}</span>
+                <div className="lg:flex ">
+                  <DropdownMenuSeparator className="   lg:w-[60px]   lg:mr-[30px] lg:border border-solid border-[#00000033]  lg:rotate-90   "></DropdownMenuSeparator>
                 </div>
-
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuPortal>
@@ -110,7 +103,7 @@ console.log("form:", form);
                 avoidCollisions={true}
                 sideOffset={6}
                 style={{ direction: "rtl" }}
-                className="w-[218px] bg-white  translate-x-5 translate-y-5   h-fit  border border-solid border-[#00000033]   rounded-[8px]"
+                className=" w-[160px] h-auto rounded-[8px] lg:w-[218px] bg-white  lg:translate-x-5 lg:translate-y-5   lg:h-fit  border border-solid border-[#00000033]   lg:rounded-[8px]"
               >
                 {citys.map((city, index) => (
                   <React.Fragment key={city.id}>
@@ -121,7 +114,7 @@ console.log("form:", form);
                           shouldValidate: true,
                         })
                       }
-                      className=" h-[54px] text-#282828 flex gap-2 items-center"
+                      className=" h-[54px] pr-[15px] text-#282828 flex gap-2 items-center"
                     >
                       <Image
                         src="/icons/location.svg"
@@ -140,8 +133,14 @@ console.log("form:", form);
             </DropdownMenuPortal>
           </DropdownMenu>
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <button type="button" className="flex items-center select-none ">
+            <DropdownMenuTrigger
+              className="w-[160px]  h-[47px] border border-solid border-[#00000026] rounded-[12px] lg:border-none"
+              asChild
+            >
+              <button
+                type="button"
+                className="flex items-center justify-center select-none "
+              >
                 <Image
                   src="icons/destination.svg"
                   width={20}
@@ -151,14 +150,13 @@ console.log("form:", form);
 
                 <span>{destinationLabel}</span>
                 <div>
-                <DropdownMenuSeparator className="w-[57px] mr-[127px] border border-solid border-[#00000033] rotate-90 "></DropdownMenuSeparator>
+                  <DropdownMenuSeparator className="   lg:w-[57px] lg:mr-[90px] lg:border lg:border-solid lg:border-[#00000033] lg:rotate-90 "></DropdownMenuSeparator>
                 </div>
-                  
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent
               style={{ direction: "rtl" }}
-              className=" border border-solid border-[#00000033] w-[218px] h-fit  translate-y-4 translate-x-8 bg-white rounded-[8px] "
+              className=" w-[160px] px-[15px] z-50 h-auto border border-solid border-[#00000033] lg:w-[218px] lg:h-auto  lg:translate-y-4 lg:translate-x-8 bg-white rounded-[8px] "
               side="bottom"
               align="end"
               avoidCollisions={true}
@@ -167,7 +165,7 @@ console.log("form:", form);
               {citys.map((city, index) => (
                 <React.Fragment key={city.id}>
                   <DropdownMenuItem
-                    className="flex items-center h-[54px]"
+                    className="flex items-center h-[54px] gap-2"
                     onClick={() => setValue("destinationId", city.id)}
                   >
                     <Image
@@ -185,34 +183,49 @@ console.log("form:", form);
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
-          <div className="flex w-full">
-            <div className="flex items-center gap-2">
-              <Image src="/icons/calendar.svg" width={20} height={20} alt="c" />
-              <h2>تاریخ</h2>
-            </div>
-             <Controller
-            control={control}
-            name="date"
-            render={({ field: { onChange, value } }) => (
-              <div className="">
-                <DatePicker
-                  containerClassName="w-full"
-                  inputClass="w-[100px] h-[71px]"
-                  // inputClass="hidden"
-                  range
-                  value={value}
-                  onChange={(e) =>
-                    onChange({ startDate: e.from, endDate: e.to })
-                  }
+          <div className="flex flex-wrap w-full justify-center lg:justify-start  lg:px-0">
+            <Controller
+              control={control}
+              name="date"
+              render={({ field: { onChange, value } }) => (
+                <div className=" relative w-full lg:w-[180px]  ">
+                  {!value && (
+                    <div className="  flex items-center absolute right-40 top-6  lg:flex lg:absolute lg:items-center lg:right-5 lg:top-3.5 lg:gap-2">
+                      <Image
+                        className="   "
+                        src="/icons/calendar.svg"
+                        width={20}
+                        height={20}
+                        alt="calendar"
+                      />
+                      <span className=" lg:text-sm text-[#00000080] text-[14px]">
+                        تاریخ
+                      </span>
+                    </div>
+                  )}
                   
-                />
-              </div>
-            )}
-          />
-
+                    <DatePicker
+                      containerClassName="w-full"
+                      inputClass=" w-full h-[47px] mt-[12px] rounded-[12px] border border-solid border-[#00000026] lg:w-[180px] lg:border-none lg:mr-[80px]"
+                      // inputClass="hidden"
+                      range
+                      value={value}
+                      onChange={(e) =>
+                        onChange({ startDate: e.from, endDate: e.to })
+                      }
+                    />
+                  
+                </div>
+              )}
+            />
           </div>
-         
-          <button className="w-[190px] rounded-[16px] h-[51px] bg-[#28A745] ml-[10px] flex-none" type="submit">جستوجو</button>
+
+          <button
+            className=" w-full h-[47px] rounded-[16px] mt-[24px] text-white lg:w-[190px] lg:rounded-[16px] lg:h-[51px] bg-[#28A745] lg:ml-[10px] lg:mt-0 lg:flex-none"
+            type="submit"
+          >
+            جستوجو
+          </button>
         </div>
       </div>
     </form>

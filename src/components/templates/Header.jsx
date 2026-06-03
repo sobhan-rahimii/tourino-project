@@ -13,7 +13,7 @@ function Header() {
 
   return (
     <>
-      <header className=" w-full  hidden lg:block    mt-[24px] md:block   ">
+      <header className=" w-full  hidden lg:block    mt-[24px] md:block border-b-1 border-solid border-[#00000029]   ">
     
           <div className="  lg:max-w-[1270px] mx-auto    flex items-center justify-between px-7   ">
             <div className="flex  items-center  gap-6    ">
@@ -48,7 +48,7 @@ function Header() {
         
       </header>
 
-      <header className="w-full md:hidden lg:hidden block header-mt-24-important ">
+      <header className="w-full md:hidden lg:hidden block header-mt-24-important pr-[31px] pl-[31px] ">
         <div className="flex items-center justify-between ">
           <button className="pr-[20px] " onClick={toggelMobileMenu}>
             <Image

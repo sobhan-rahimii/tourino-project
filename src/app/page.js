@@ -16,11 +16,14 @@ export default async function Home({searchParams}) {
     
   return (
     <>
+    <div className="w-full overflow-hidden  " >
+
       <Banner />
       <SearchForm/>
       <TourList tourData={data} />
       <PhoneTorino/>
       <WhyTourino/>
+    </div>
     </>
   );
 }
