@@ -7,8 +7,8 @@ export default function ProfileLayout({ children }) {
   return (
     <AuthProvider>
       <>
-        <div className="block lg:hidden w-full  ">
-          <div className="flex justify-center pr-[42px]    ">
+        <div className="block lg:hidden w-full   ">
+          <div className="flex justify-center pr-[42px] pl-[44px]    ">
             <div className="flex gap-8  ">
               <Link className="flex " href="/profile">
                 <Image
@@ -43,8 +43,8 @@ export default function ProfileLayout({ children }) {
           <div className="w-[328px] border border-solid border-[#00000040] inline-block pr-[30px] "></div>
         </div>
 
-        <div className=" hidden lg:block max-w-[1270px] px-10 mx-auto lg:flex ">
-          <div className="  w-[282px] px-[12px] pt-[12px] h-[170px] border border-solid border-[#00000033] rounded-[10px] mt-[36px]">
+        <div className="   max-w-[1270px] px-10 mx-auto lg:flex lg:flex-row   ">
+          <div className=" hidden lg:block  w-[282px] px-[12px] pt-[12px] h-[170px] border border-solid border-[#00000033] rounded-[10px] mt-[36px]">
             <ul className="  ">
               <Link href="/profile" className="flex items-center  gap-1 ">
                 <Image
@@ -84,8 +84,8 @@ export default function ProfileLayout({ children }) {
               </Link>
             </ul>
           </div>
+          <main className=" ">{children}</main>
 
-          <main>{children}</main>
         </div>
       </>
     </AuthProvider>

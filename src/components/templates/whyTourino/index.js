@@ -44,7 +44,7 @@ function WhyTourino() {
           <SwiperPhotos />
         </div>
 
-        <div className=" w-full lg:max-w-[1270px] px-[31px]  mt-[60px] lg:mt-[79px]   border border-solid border-[#00000033]"></div>
+        <div className="  w-[1270px] px-[31px]  mt-[60px] lg:mt-[79px]   border border-solid border-[#00000033]"></div>
       </div>
       <div className=" w-full px-[31px] lg:max-w-[1270px] lg:mx-auto lg:px-10 mt-[43px]  ">
         <div className="flex flex-col lg:items-center   lg:flex lg:justify-between lg:flex-row lg:gap-3 ">
@@ -93,8 +93,11 @@ function WhyTourino() {
           </div>
         </div>
       </div>
+     
+      <div className=" lg:block hidden border border-solid border-[#00000033] mt-[32px] mx-auto"></div>
 
-      <div className="w-[1200px] border border-solid border-[#00000033] mt-[32px] mx-auto"></div>
+      
+
     </>
   );
 }

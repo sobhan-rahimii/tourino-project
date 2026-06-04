@@ -33,6 +33,9 @@ function UserAccountInformation({status}) {
     }
 
   return (
+
+    <>
+    
     <form onSubmit={handleSubmit(submitHandler)} >
 
     
@@ -55,6 +58,7 @@ function UserAccountInformation({status}) {
             </div>
           </div>
           </form>
+          </>
   )
 }
 

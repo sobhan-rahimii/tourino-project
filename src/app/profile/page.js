@@ -35,16 +35,107 @@ function ProfilePage() {
   console.log(data);
   return (
     <>
-      {/* //mobile responsive//  */}
-      <div className="lg:hidden block w-full ">
-        <div className="w-[328px] h-[169px] border border-solid border-[#00000033] rounded-[10px]">
-
+      <div className="w-full pr-[30px] pl-[32px]">
+        <div className="lg:hidden  w-full flex flex-col items-center  ">
+          <div className=" w-full  w-[328px] h-[169px] bg-white border border-solid border-[#00000033] rounded-[10px]">
+            <h1>اطلاعات حساب کاربری</h1>
+            <div className="flex items-center justify-between mt-[28px] pr-[20] pl-[21px]">
+              <h1>شماره موبایل</h1>
+              <span>09224521125</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-7">
+                <h1 className="mt-[40px] mr-[21px]">ایمیل</h1>
+                <span className="mt-[51px]">-</span>
+              </div>
+              <div className="ml-[21px] mt-[41px]">
+                <button className="flex items-center">
+                  <Image
+                    src="/icons/edit-2.svg"
+                    width={12}
+                    height={12}
+                    alt="edit"
+                  />
+                  افزودن
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
+        {PersonalInformationStatus ? (
+          <PersonalInformationForm status={setPersonalInformationStatus} />
+        ) : (
+          <div className=" w-full lg:hidden block w-[328px] h-[251px] border border-solid border-[#00000033] rounded-[10px] mt-[20px]">
+            <div className="flex items-center justify-between pr-[20px] pl-[18px] pt-[16px]">
+              <h1>اطلاعات شخصی</h1>
+              <button
+                onClick={() => setPersonalInformationStatus(true)}
+                className="flex items-center"
+              >
+                <Image
+                  src="/icons/edit-2.svg"
+                  width={12}
+                  height={12}
+                  alt="edit"
+                />
+                ویرایش اطلاعات
+              </button>
+            </div>
+            <div className="flex items-center justify-between pr-[20px] pl-[36px] mt-[34px]">
+              <p>نام و نام خانوادگی</p>
+              <span>{data?.data?.fullName || "-"}</span>
+            </div>
 
+            <div className="flex items-center justify-between pr-[20px] pl-[21px] mt-[24px]">
+              <p>کدملی</p>
+              <span>{data?.data?.nationalCode || "-"}</span>
+            </div>
+
+            <div className="flex items-center justify-between mr-[20px] pl-[31px] mt-[24px]    ">
+              <p>تاریخ تولد</p>
+              <span>{formatJalaliDate(data?.data?.birthDate || "-")}</span>
+            </div>
+          </div>
+        )}
+
+        {bankFormStatus ? (
+          <BankAccountForm status={setBankFormStatus} />
+        ) : (
+          <div className=" w-full  lg:hidden block w-[328px] h-[205px] border border-solid border-[#00000033] rounded-[10px] mt-[20px]">
+            <div className="flex items-center justify-between pr-[20] pl-[18] pt-[16px] MT-[20px]">
+              <h1>اطلاعات حساب بانکی</h1>
+              <button onClick={() => setBankFormStatus(true)} className="flex items-center">
+                <Image
+                  src="/icons/edit-2.svg"
+                  width={12}
+                  height={12}
+                  alt="edit"
+                />
+                ویرایش اطلاعات
+              </button>
+            </div>
+            <div className="flex items-center justify-between pr-[20] pl-[21px]">
+              <h1 className="mt-[34px] ">شماره کارت</h1>
+              <span className="mt-[39px]">
+                {data?.data?.payment?.debitCard_code || "-"}
+              </span>
+            </div>
+
+            <div className="flex items-center justify-between pr-[20] pl-[21px]">
+              <h1 className="mt-[24px] ">شماره شبا</h1>
+              <span className="mt-[35px]">
+                {data?.data?.payment?.shaba_code || "-"}
+              </span>
+            </div>
+            <div className="flex items-center justify-between pr-[20px] pl-[21px]">
+              <h1 className="">شماره حساب</h1>
+              <span className="mt-[46px]">
+                {data?.data?.payment?.accountIdentifier || "-"}
+              </span>
+            </div>
+          </div>
+        )}
       </div>
-      
-      
-      {/* //desktop// */}
       <div className=" hidden lg:block max-w-[1270px] mx-auto px-10">
         {accountInformation ? (
           <UserAccountInformation status={setAccountInformation} />
@@ -81,7 +172,7 @@ function ProfilePage() {
         {PersonalInformationStatus ? (
           <PersonalInformationForm status={setPersonalInformationStatus} />
         ) : (
-          <div className="w-[872px] h-[171px] border border-solid border-[#00000033] rounded-[10px] mt-[24px]">
+          <div className=" w-[872px] h-[171px] border border-solid border-[#00000033] rounded-[10px] mt-[24px]">
             <div className="flex items-center justify-between pt-[16px]">
               <h1 className="pr-[12px]">اطلاعات شخصی</h1>
               <div className="">
@@ -124,7 +215,7 @@ function ProfilePage() {
         {bankFormStatus ? (
           <BankAccountForm status={setBankFormStatus} />
         ) : (
-          <div className="w-[872px] h-[171px] border border-solid border-[#00000033] rounded-[10px] mt-[24px]">
+          <div className=" lg:w-[872px] lg:h-[171px] border border-solid border-[#00000033] rounded-[10px] lg:mt-[24px]">
             <div className="flex items-center justify-between">
               <h1 className="pr-[12px] pt-[12px]">اطلاعات حساب بانکی</h1>
               <button

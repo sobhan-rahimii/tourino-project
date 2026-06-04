@@ -9,6 +9,8 @@ import TourList from "@/components/templates/TourList";
 import PhoneTorino from "@/components/templates/phoneTourino";
 import WhyTourino from "@/components/templates/whyTourino";
 import SearchForm from "@/components/templates/searchForm";
+import Title from "@/components/atom/Title";
+import TitleTourList from "@/components/atom/TitleTourList";
 
 export default async function Home({searchParams}) {
   const params = await searchParams;
@@ -19,7 +21,10 @@ export default async function Home({searchParams}) {
     <div className="w-full overflow-hidden  " >
 
       <Banner />
+      <Title/>
+      
       <SearchForm/>
+      <TitleTourList/>
       <TourList tourData={data} />
       <PhoneTorino/>
       <WhyTourino/>

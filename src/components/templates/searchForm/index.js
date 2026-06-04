@@ -72,7 +72,7 @@ function SearchForm() {
 
   return (
     <form className="w-full" onSubmit={handleSubmit(submitHandler)}>
-      <div className=" w-full border-0 px-[31px]  lg:px-0 lg:w-[874px] lg:h-[71px] lg:mx-auto lg:flex lg:justify-center lg:mt-[30px] lg:border lg:border-solid lg:border-e-red-600">
+      <div className=" w-full border-0 px-[31px]  lg:px-0 lg:w-[874px] lg:h-[71px] lg:mx-auto lg:flex lg:justify-center lg:mt-[30px] lg:border lg:border-solid lg:border-[#00000026] lg:rounded-[20px]">
         <div className=" w-full flex flex-wrap px-[31px] gap-x-10    lg:w-full lg:flex-nowrap lg:flex lg:flex-row lg:items-center lg:px-0 lg:gap-2 ">
           <DropdownMenu>
             <DropdownMenuTrigger
@@ -90,9 +90,9 @@ function SearchForm() {
                   alt="location"
                   className=" "
                 />
-                <span className="text-[#00000080]">{originLabel}</span>
+                <span className="text-[#00000080] ">{originLabel}</span>
                 <div className="lg:flex ">
-                  <DropdownMenuSeparator className="   lg:w-[60px]   lg:mr-[30px] lg:border border-solid border-[#00000033]  lg:rotate-90   "></DropdownMenuSeparator>
+                  <DropdownMenuSeparator className="   lg:w-[60px]   lg:mr-[90px] lg:border border-solid border-[#00000033]  lg:rotate-90   "></DropdownMenuSeparator>
                 </div>
               </button>
             </DropdownMenuTrigger>
@@ -139,7 +139,7 @@ function SearchForm() {
             >
               <button
                 type="button"
-                className="flex items-center justify-center select-none "
+                className="flex items-center lg:mr-[50] select-none "
               >
                 <Image
                   src="icons/destination.svg"
@@ -148,7 +148,7 @@ function SearchForm() {
                   alt="destination"
                 />
 
-                <span>{destinationLabel}</span>
+                <span className="">{destinationLabel}</span>
                 <div>
                   <DropdownMenuSeparator className="   lg:w-[57px] lg:mr-[90px] lg:border lg:border-solid lg:border-[#00000033] lg:rotate-90 "></DropdownMenuSeparator>
                 </div>
@@ -230,35 +230,7 @@ function SearchForm() {
       </div>
     </form>
 
-    // <form
-    //   className="bg-green-100 flex gap-5 p-5 w-fit mx-auto"
-    //   onSubmit={handleSubmit(submitHandler)}
-    // >
-    //   <select {...register("originId")}>
-    //     <option value="1">تهران</option>
-    //     <option value="2">سنندج</option>
-    //     <option value="3">مادرید</option>
-    //   </select>
-
-    //   <select {...register("destinationId")}>
-    //     <option value="1">تهران</option>
-    //     <option value="2">سنندج</option>
-    //     <option value="3">مادرید</option>
-    //   </select>
-    //   <Controller
-    //     control={control}
-    //     name="date"
-    //     render={({ field: { onChange } }) => (
-    //       <DatePicker
-    //         onChange={(e) => onChange({ startDate: e.from, endDate: e.to })}
-    //         range
-    //       />
-    //     )}
-    //   />
-    //   <button type="submit" className="bg-green-500 text-sm p-2 text-white">
-    //     جستوجو
-    //   </button>
-    // </form>
+    
   );
 }
 
