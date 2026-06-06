@@ -20,6 +20,11 @@
   margin: 0;
 }
 
+
+body{
+  min-height: 100%;
+}
+
 a {
   color: inherit;
   text-decoration: none;

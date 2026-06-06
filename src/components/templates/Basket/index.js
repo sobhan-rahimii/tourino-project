@@ -154,9 +154,9 @@ function Basket({ data }) {
       </form>
 
       <form onSubmit={handleSubmit(submitHandler)}>
-        <div className=" hidden lg:block max-w-[1270px] mx-auto px-10 ">
+        <div className=" hidden lg:block max-w-[1270px] mx-auto px-10  ">
           <div className="flex">
-            <div className="w-[865px] h-[228px] mt-[36px] rounded-[10px] border border-solid border-[#00000033]">
+            <div className="w-[865px] h-[228px] lg:mb-[298px] mt-[36px] rounded-[10px] border border-solid border-[#00000033]">
               <div className="flex items-center pr-7 pt-[20px]">
                 <Image
                   src="/icons/frame.svg"

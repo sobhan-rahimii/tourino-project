@@ -7,9 +7,9 @@ export default function ProfileLayout({ children }) {
   return (
     <AuthProvider>
       <>
-        <div className="block lg:hidden w-full   ">
-          <div className="flex justify-center pr-[42px] pl-[44px]    ">
-            <div className="flex gap-8  ">
+        <div className="block lg:hidden w-full    ">
+          <div className="w-full flex justify-center pr-[42px] pl-[44px]    ">
+            <div className="w-full flex gap-8  ">
               <Link className="flex " href="/profile">
                 <Image
                   src="/icons/profile.svg"
@@ -19,7 +19,7 @@ export default function ProfileLayout({ children }) {
                 />
                 <p>پروفایل</p>
               </Link>
-              <Link className="flex mr-[40px]" href="/profile">
+              <Link className="flex mr-[40px]" href="/profile/my-tours">
                 <Image
                   src="/icons/sun-fog.svg"
                   width={16}
@@ -29,7 +29,7 @@ export default function ProfileLayout({ children }) {
                 <p>تور های من</p>
               </Link>
 
-              <Link className="flex mr-[40px]" href="/profile">
+              <Link className="flex mr-[40px]" href="/profile/transactions">
                 <Image
                   src="/icons/convert-card.svg"
                   width={16}
@@ -39,8 +39,13 @@ export default function ProfileLayout({ children }) {
                 <p>تراکنش ها</p>
               </Link>
             </div>
+            
+
+            
           </div>
-          <div className="w-[328px] border border-solid border-[#00000040] inline-block pr-[30px] "></div>
+          <div className="   w-[395px] h-0 border border-solid border-[#00000040] mx-auto   mt-[5px] justify-center flex  "></div>
+
+          
         </div>
 
         <div className="   max-w-[1270px] px-10 mx-auto lg:flex lg:flex-row   ">

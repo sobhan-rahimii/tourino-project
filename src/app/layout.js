@@ -16,18 +16,24 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
-      <body >
+      <body className=" min-h-screen  " >
         <TanstackQueryProvider>
+          <div className="flex flex-col min-h-screen">
+
           <Header />
-          <div className="h-full">
+          
+         <main className="lg:flex-grow lg:mb-[12px]">
           {children}
 
-          </div>
-          <footer className="">
+          </main> 
+
+          
+          <footer className="w-full">
           <Footer/>
 
           </footer>
           
+          </div>
           
         </TanstackQueryProvider>
         <Toaster/>

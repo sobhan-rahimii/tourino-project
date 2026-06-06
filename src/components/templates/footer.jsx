@@ -55,10 +55,10 @@ function Footer() {
             </div>
           </div>
         </div>
-      </div>
-      <div className=" hidden lg:block  w-full  border border-solid border-[#00000033] lg:mt-[28px] "></div>
-      <div className="lg:block hidden lg:text-center">
-        <p>کلیه حقوق این وب سایت متعلق به تورینو میباشد.</p>
+        <div className=" hidden lg:block  w-full  border border-solid border-[#00000033] lg:mt-[28px] "></div>
+        <div className="lg:block hidden lg:text-center ">
+          <p>کلیه حقوق این وب سایت متعلق به تورینو میباشد.</p>
+        </div>
       </div>
       <div className=" w-full lg:hidden block  ">
         <div className=" w-[328px]   px-[31px] mx-auto  mt-[16px] border border-dashed border-[#00000033] "></div>
@@ -71,7 +71,7 @@ function Footer() {
             <p className="mt-[11px]">بیمه مسافرتی</p>
           </div>
           <div className="  mt-[24px] ">
-            <h1 >خدمات مشتریان</h1>
+            <h1>خدمات مشتریان</h1>
             <p className="mt-[20px]">پشتیبانی آنلاین</p>
             <p className="mt-[11px]">راهنمای خرید</p>
             <p className="mt-[11px]">راهنمای استرداد</p>
@@ -81,48 +81,50 @@ function Footer() {
         <div className="flex items-center justify-between">
           <div className="flex  items-center pr-[31px] flex-wrap gap-6 mt-[48px] ">
             <Image
-                src="/icons/state-airline-f45c55b2 1.svg"
-                width={35}
-                height={38}
-                alt="a"
-              />
-              <Image
-                src="/icons/samandehi-6e2b448a.svg"
-                width={35}
-                height={38}
-                alt="a"
-              />
-              <Image
-                src="/icons/aira-682b7c43.svg"
-                width={35}
-                height={38}
-                alt="a"
-              />
-              <Image
-                src="/icons/aira-682b7c43.svg"
-                width={35}
-                height={38}
-                alt="a"
-              />
-              <Image
-                src="/icons/aira-682b7c43.svg"
-                width={35}
-                height={38}
-                alt="a"
-              />
+              src="/icons/state-airline-f45c55b2 1.svg"
+              width={35}
+              height={38}
+              alt="a"
+            />
+            <Image
+              src="/icons/samandehi-6e2b448a.svg"
+              width={35}
+              height={38}
+              alt="a"
+            />
+            <Image
+              src="/icons/aira-682b7c43.svg"
+              width={35}
+              height={38}
+              alt="a"
+            />
+            <Image
+              src="/icons/aira-682b7c43.svg"
+              width={35}
+              height={38}
+              alt="a"
+            />
+            <Image
+              src="/icons/aira-682b7c43.svg"
+              width={35}
+              height={38}
+              alt="a"
+            />
           </div>
           <div className="flex items-center flex-col pl-[31px] mt-[48px]  ">
             <Image src="/icons/logo.svg" width={100} height={30} alt="Logo" />
-            <p className="mt-[11px] whitespace-nowrap">تلفن پشتیبانی: 021-8574</p>
-
+            <p className="mt-[11px] whitespace-nowrap">
+              تلفن پشتیبانی: 021-8574
+            </p>
           </div>
         </div>
         <div className=" w-[328px]   px-[31px] mx-auto   border border-solid border-[#00000033] mt-[18px] "></div>
-          <div className=" px-[31px]">
-<p className="text-center">کلیه حقوق این وب سایت متعلق به تورینو میباشد.</p>
-          </div>
+        <div className=" px-[31px]">
+          <p className="text-center">
+            کلیه حقوق این وب سایت متعلق به تورینو میباشد.
+          </p>
         </div>
-      
+      </div>
     </>
   );
 }
