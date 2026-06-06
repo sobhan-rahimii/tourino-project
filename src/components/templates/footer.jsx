@@ -5,6 +5,7 @@ function Footer() {
   return (
     <>
       <div className=" hidden lg:block  w-full max-w-[1270px] mx-auto ">
+        <div className="lg:max-w-[1270px] lg:mx-auto lg:border lg:border-solid lg:border-[#00000033]"></div>
         <div className="w-full flex justify-end">
           <div className=" w-full lg:max-w-[1270px] lg:px-[10] lg:flex lg:gap-20 lg:mt-[21px] ">
             <div className="  lg:px-[10px] ">
