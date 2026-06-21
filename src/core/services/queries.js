@@ -34,5 +34,5 @@ export const useGetUserTours = ()=>{
 export const useGetUserTransactions = ()=>{
     const queryFn = ()=> api.get("/user/transactions")
     const queryKey = ["user-transactions"]
-    return useQuery({queryFn,queryKey})
+    return useQuery({queryFn,queryKey })
 }
