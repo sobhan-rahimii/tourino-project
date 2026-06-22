@@ -1,16 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output:"standalone",
-    images:{
-        remotePatterns:[
-            {
-                protocol:"http",
-                hostname:"localhost",
-                port:"6500",
-                pathname:"/static/images/**",
-            }
-        ]
-    }
+    output: "standalone",
+    images: {
+        unoptimized: true,
+    },
 };
 
 export default nextConfig;
